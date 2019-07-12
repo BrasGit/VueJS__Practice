@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>7</title>
+</head>
+
+<body>
+
+   <div id="app">
+      <h2>
+         <a href="http//google.com" target="_blank" v-on:click.prevent="">google</a>
+      </h2>
+
+      <h2 v-on:mousemove="handMouseMove">
+         x:{{x}} \ y:{{y}}
+
+         <spa v-on:mousemove.stop>Не изменять</span>
+      </h2>
+
+      <hr>
+      <input type="text" v-on:keyup.enter.space="alertValue">
+   </div>
+
+
+
+   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+   <script>
+      new Vue({
+         el: '#app',
+         data: {
+            x: 0,
+            y: 0
+         },
+         methods: {
+            handMouseMove: function (event) {
+               this.x = event.clientX
+               this.y = event.clientY
+            },
+            alertValue: function (event) {
+               alert(event.target.value)
+            }
+         },
+
+      })
+   </script>
+</body>
+
+</html>
